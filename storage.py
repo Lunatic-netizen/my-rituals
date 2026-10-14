@@ -1,6 +1,3 @@
-# ============================================================
-# storage.py — сохранение и загрузка (отдельно для каждого пользователя)
-# ============================================================
 import os
 from datetime import datetime
 from models import Habit, HabitTracker
@@ -82,7 +79,6 @@ def save_report(tracker, user_name):
 
 
 def create_test_tracker():
-    """10 стартовых привычек."""
     tracker = HabitTracker()
     habits = [
         Habit("Пить воду", "💧", 30),
