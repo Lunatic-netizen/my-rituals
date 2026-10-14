@@ -1,6 +1,3 @@
-# ============================================================
-# main.py — интерфейс с авторизацией и отдельными данными для каждого
-# ============================================================
 import flet as ft
 import os
 from models import Habit
@@ -28,10 +25,6 @@ def main(page: ft.Page):
     goal_input = ft.TextField(label="Цель (дней)", value="30", width=120)
 
     habits_column = ft.Column(spacing=8)
-
-    # ========================================================
-    # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
-    # ========================================================
 
     def refresh_habits():
         habits_column.controls.clear()
@@ -140,10 +133,7 @@ def main(page: ft.Page):
         ),
         padding=15, bgcolor="white", border_radius=12,
     )
-
-    # ========================================================
     # ЭКРАН АВТОРИЗАЦИИ
-    # ========================================================
     name_field = ft.TextField(
         label="Как тебя зовут?",
         hint_text="Например: Иван",
@@ -206,10 +196,7 @@ def main(page: ft.Page):
         horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         spacing=10,
     )
-
-    # ========================================================
     # СТАРТ
-    # ========================================================
     if user_name:
         # Если имя уже сохранялось — грузим его привычки
         loaded = load_all(user_name)
